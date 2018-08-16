@@ -62,6 +62,8 @@ console.log(i18n.__("Hello")); // return a string "Hello"
 
 ## API 
 
+### Polyglot-API
+
 `Polyglot.t()` also provides interpolation. Pass an object with key-value pairs of interpolation arguments as the second parameter.
 
 ```js
@@ -87,6 +89,8 @@ polyglot.extend({
 
 polyglot.t("nav.sidebar.welcome"); // "Welcome"
 ```
+
+### I18n-2-API
 
 `__(string, [...])` Translates a string according to the current locale. Also supports sprintf syntax, allowing you to replace text, using the `node-sprintf` module. 
 
