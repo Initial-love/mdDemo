@@ -1,7 +1,7 @@
 Similarities and differences between Polyglot.js and I18n-2.js
 =======
 
-*Polyglot.js and I18n-2.js can achieve the function of translation.\<br>
+*Polyglot.js and I18n-2.js can achieve the function of translation.<br>
 *Ployglot.js and I18n-2.js possess lightweight simple translation module with dynamic json storage.
 
 ## Installation 
