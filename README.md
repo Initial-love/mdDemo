@@ -4,7 +4,7 @@ Similarities and differences between Polyglot.js and I18n-2.js
 *Polyglot.js and I18n-2.js can achieve the function of translation.<br>
 *Ployglot.js and I18n-2.js possess lightweight simple translation module with dynamic json storage.<br>
 *Ployglot.js and I18n-2.js used API which are the most commonly is written below.<br>
-*For specific function functions, please refer to the following address. Ployglot.js: (http://airbnb.github.com/polyglot.js), I18n-2.js: (http://github.com/jeresig/i18n-node-2)
+*For specific function functions, please refer to the following address. Ployglot.js: (http://airbnb.github.com/polyglot.js), I18n-2.js: (http://github.com/jeresig/i18n-node-2)<br>
 *Ployglot.js and I18n-2.js have many similarities, but in terms of specific implementation, they are different from the storage of stroage.
 
 ## Installation 
@@ -18,6 +18,8 @@ npm install i18n-2
 
 ### polyglot Demo
 
+#### Output key corresponding to value
+
 ```js
 var polyglot = new Polyglot();
 
@@ -29,6 +31,8 @@ ployglot.t("hello");  // return a string "Hello"
 ```
 
 ### I18n-2 Demo
+
+#### Output key corresponding to value
 
 ```en.js
   //en.js is locales onload resources that is key-value json data and uesd in the following all demos.
@@ -69,6 +73,8 @@ console.log(i18n.__("Hello")); // return a string "Hello"
 
 `Polyglot.t()` also provides interpolation. Pass an object with key-value pairs of interpolation arguments as the second parameter.
 
+#### Replacement of variables and deep key values
+
 ```js
 polyglot.extend({
   "hello_name": "Hola, %{name}."
@@ -93,7 +99,7 @@ polyglot.extend({
 polyglot.t("nav.sidebar.welcome"); // "Welcome"
 ```
 
-## The realization of single plural in translation below.
+#### The realization of single plural in translation below.
 For pluralizing "car" in English, Polyglot assumes you have a phrase of the form:
 
 ```js
@@ -123,10 +129,31 @@ As a shortcut, you can also pass a number to the second parameter:
 polyglot.t("num_cars", 2); // "2 cars"
 ```
 
+#### Change translation order
+
+Some languages cannot be said to translate in the normal order, so the string corresponding to the value adjusts the normal translation order. For instance:
+
+```json
+{
+  changeDemo: 'change %{b}, %{a}, %{c}' // %{a or b or c} it can be repeated. 
+}
+```
+
+```js
+const jsnoData = {
+  a: "aaa",
+  b: "bbb",
+  c: "ccc
+};
+
+polyglot.t("changeDemo", jsonData); // change bbb, aaa, ccc
+```
 
 ### I18n-2-API
 
 `__(string, [...])` Translates a string according to the current locale. Also supports sprintf syntax, allowing you to replace text, using the `node-sprintf` module. 
+
+#### Replacement of variables and deep key values
 
 ```javascript
 var greeting = i18n.__('Hello %s, how are you today?', 'Marcus'); // greeting is "Hello Marcus, how are you today?"
@@ -146,9 +173,9 @@ And use not dot notation to acccess the value :
 i18n.__('foo.bar'); // return a string "ok"
 ```
 
-## The realization of single plural in translation below.
+#### The realization of single plural in translation below.
 
-### `__n(one, other, count, [...])`
+`__n(one, other, count, [...])`
 
 Different plural forms are supported as a response to `count`:
 ```javascript
@@ -171,7 +198,25 @@ You may also use in your locale object/file :
 }
 ```
 and use `__n()` as you would use `__()` (directly, or from locale) :
+
 ```javascript
 var singular = i18n.__n('catEat', 1, 'mouse'); // "1 cat eat the mouse"
 var plural = i18n.__n('catEat', 10, 'mouse'); // "10 cats eat the mouse"
 ```
+
+#### Change translation order
+
+Some languages cannot be said to translate in the normal order, so the string corresponding to the value adjusts the normal translation order. For instance:
+
+```json
+{
+  "changeDemo": "changeDemo %2$s, %1$s, %3$s", // For more format matching, please refer to [sprintf module]
+}
+```
+
+```js
+var str = ["str_a", "str_b", "str_c"];
+// str[index] it can be repeated
+var changeDemo = i18n.__n('changeDemo', 1, str[0], str[1], str[2]); // "changeDemo str_b, str_a, str_b"
+```
+
