@@ -135,12 +135,14 @@ Some languages cannot be said to translate in the normal order, so the string co
 
 ```json
 {
-  changeDemo: 'change %{b}, %{a}, %{c}' // %{a or b or c} it can be repeated. 
+  changeDemo: 'change %{b}, %{a}, %{c}'
 }
 ```
 
+Tip: %{a or b or c} it can be repeated. 
+
 ```js
-const jsnoData = {
+const jsonData = {
   a: "aaa",
   b: "bbb",
   c: "ccc
@@ -210,9 +212,11 @@ Some languages cannot be said to translate in the normal order, so the string co
 
 ```json
 {
-  "changeDemo": "changeDemo %2$s, %1$s, %3$s", // For more format matching, please refer to [sprintf module]
+  "changeDemo": "changeDemo %2$s, %1$s, %3$s",
 }
 ```
+
+Tip: For more format matching, please refer to [sprintf module];
 
 ```js
 var str = ["str_a", "str_b", "str_c"];
