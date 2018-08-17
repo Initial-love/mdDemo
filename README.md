@@ -135,7 +135,7 @@ Some languages cannot be said to translate in the normal order, so the string co
 
 ```json
 {
-  'changeDemo': "change %{b}, %{a}, %{c}"
+  "changeDemo": "change %{b}, %{a}, %{c}"
 }
 ```
 
