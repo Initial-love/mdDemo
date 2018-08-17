@@ -135,7 +135,7 @@ Some languages cannot be said to translate in the normal order, so the string co
 
 ```json
 {
-  changeDemo: 'change %{b}, %{a}, %{c}'
+  'changeDemo': 'change %{b}, %{a}, %{c}'
 }
 ```
 
@@ -145,7 +145,7 @@ Tip: %{a or b or c} it can be repeated.
 const jsonData = {
   a: "aaa",
   b: "bbb",
-  c: "ccc
+  c: "ccc"
 };
 
 polyglot.t("changeDemo", jsonData); // change bbb, aaa, ccc
