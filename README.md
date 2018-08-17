@@ -231,16 +231,16 @@ They are stored in the form of key-value, but they are different iin detail.
 
 ```json
 {
-	myroot: {
-		hello: {
-			world: 'Hello, World!',
-		}
-	},
-	hello_name: 'Hello, %{name}',
-	count_beer: 'One beer |||| %{smart_count} beers',
-	fun: "this is a %{name} component",
-	language: 'language',
-	changeIndex: 'change %{b}, %{a}, %{c}'
+    "myroot": {
+    	"hello": {
+    	   "world": 'Hello, World!',
+    	}
+    },
+    hello_name: 'Hello, %{name}',
+    count_beer: 'One beer |||| %{smart_count} beers',
+    fun: "this is a %{name} component",
+    language: 'language',
+    changeIndex: 'change %{b}, %{a}, %{c}'
  }
 ```
 Tip: The use of "||||" as the separator of a single complex number.
@@ -249,21 +249,21 @@ Tip: The use of "||||" as the separator of a single complex number.
 
 ```json
 {
-	"There is one monkey in the %%s": {
-		"one": "There is %x monkey",
-		"other": "There is %o monkeys"
-	},
-	"locales.en": "English",
-	"Hello, %s": "Hello, %s",
-	"a": "this is str-a",
-	"b": "this is str-b",
-	"c": "this is str-c",
-	"compose": "compose %2$s, %1$s, %3$s",
-	"json": {
-		"aaa": "%s",
-		"bbb": "%s"
-	},
-	"outputJson": "%j"
+    "There is one monkey in the %%s": {
+    	"one": "There is %x monkey",
+    	"other": "There is %o monkeys"
+    },
+    "locales.en": "English",
+    "Hello, %s": "Hello, %s",
+    "a": "this is str-a",
+    "b": "this is str-b",
+    "c": "this is str-c",
+    "compose": "compose %2$s, %1$s, %3$s",
+    "json": {
+    	"aaa": "%s",
+    	"bbb": "%s"
+    },
+    "outputJson": "%j"
 }
 ```
 Tip: The use of "one" and "other" as the key of a single complex number.
