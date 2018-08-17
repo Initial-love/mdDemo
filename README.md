@@ -233,13 +233,13 @@ They are stored in the form of key-value, but they are different iin detail.
 {
     "myroot": {
     	"hello": {
-    	   "world": 'Hello, World!',
+    	   "world": "Hello, World!",
     	}
     },
-    "hello_name": 'Hello, %{name}',
+    "hello_name": "Hello, %{name}",
     "count_beer": "One beer |||| %{smart_count} beers",
     "fun": "this is a %{name} component",
-    "language": 'language',
+    "language": "language",
     "changeIndex": "change %{b}, %{a}, %{c}"
  }
 ```
