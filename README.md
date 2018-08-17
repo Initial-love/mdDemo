@@ -236,11 +236,11 @@ They are stored in the form of key-value, but they are different iin detail.
     	   "world": 'Hello, World!',
     	}
     },
-    hello_name: 'Hello, %{name}',
-    count_beer: 'One beer |||| %{smart_count} beers',
-    fun: "this is a %{name} component",
-    language: 'language',
-    changeIndex: 'change %{b}, %{a}, %{c}'
+    "hello_name": 'Hello, %{name}',
+    "count_beer": "One beer |||| %{smart_count} beers",
+    "fun": "this is a %{name} component",
+    "language": 'language',
+    "changeIndex": "change %{b}, %{a}, %{c}"
  }
 ```
 Tip: The use of "||||" as the separator of a single complex number.
